@@ -4,7 +4,7 @@ import logging
 def setup_logger():
     # Получение пути к текущей директории
     current_directory = os.path.dirname(os.path.abspath(__file__))
-    log_file_path = os.path.join(f'{current_directory}/.env', 'app.log')
+    log_file_path = os.path.join(f'{current_directory}/', 'app.log')
 
     # Создание объекта логгера
     logger = logging.getLogger('my_logger')

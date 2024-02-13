@@ -4,7 +4,7 @@ import configparser
 from airflow.operators.bash_operator import BashOperator
 from airflow.utils.dates import days_ago
 logging.info('Starting etl_dag')
-config_file_path = '../../.env'
+config_file_path = '../../.en_v.cfg'
 
 def read_config(file_path):
         config = configparser.ConfigParser()

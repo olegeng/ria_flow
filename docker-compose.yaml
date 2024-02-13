@@ -22,9 +22,9 @@ services:
     ports:
       - "5050:80"
 
-  # splash:
-  #   container_name: splash
-  #   image: scrapinghub/splash
-  #   ports:
-  #     - "8050:8050"
-  #     - "5023:5023"
+  splash:
+    container_name: splash
+    image: scrapinghub/splash
+    ports:
+      - "8050:8050"
+      - "5023:5023"

@@ -1,11 +1,11 @@
 import scrapy
 import time
-from logger_config import logger
+#from logger_config import logger
 from scrapy_splash import SplashRequest
 from datetime import datetime
 
 class AutoriaSpider(scrapy.Spider):
-    logger.info('Spider is working')
+    #logger.info('Spider is working')
     name = "autoria"
     allowed_domains = ["auto.ria.com"]
     start_urls = ["https://auto.ria.com/car/used"]
@@ -33,7 +33,7 @@ class AutoriaSpider(scrapy.Spider):
         print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
         url = response.url
         car_name = response.xpath("//h3[@class='auto-content_title']/text()").get()
-        car_price = response.xpath("//*[@id='showLeftBarView']/section[1]/div[1]/strong/text()").get().replace(' ', ).replace('$', '')
+        car_price = response.xpath("//*[@id='showLeftBarView']/section[1]/div[1]/strong/text()").get().replace(' ', '').replace('$', '')
         odometer = f'{response.xpath("""//span[@class="size18"]/text()""").get()}000'
         user_name = response.xpath("//div[@class='seller_info_name bold'][1]/text()").get()
         phone_number = response.xpath("//*[@id='phonesBlock']/div/span/text()").get()

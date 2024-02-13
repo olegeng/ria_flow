@@ -6,23 +6,24 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-from logger_config import logging
+#from logger_config import logging
 import psycopg2
 from psycopg2 import Error
 import configparser
 import pandas as pd
-logging.info('Starting scrapy Pipeline')
+#logging.info('Starting scrapy Pipeline')
 class RiaScrapperPipeline:
     def process_item(self, item, spider):
         return item
 
 
 class SQLitePipeline:
-    logging.info('Loading to SQL')
+    #logging.info('Loading to SQL')
     def open_spider(self, spider):
-        logging.info('Spider opened - SQLitePipeline')
+        #logging.info('Spider opened - SQLitePipeline')
+        pass
 
-    def close_spider(self, item, spider):
+    def close_spider(self, spider):
 
         def read_config(self, file_path):
             config = configparser.ConfigParser()
@@ -53,7 +54,7 @@ class SQLitePipeline:
                     print("Підключення закрито")
 
         # Шлях до файлу конфігурації
-        config_file_path = '../../.env/config.cfg'
+        config_file_path = '../../.en_v.cfg'
 
         # Читання конфігураційних даних з файлу
         config = read_config(config_file_path)
@@ -64,6 +65,6 @@ class SQLitePipeline:
             car_data = row.tolist()
             insert_data(config, car_data)
             print("Рядок успішно вставлено")
-        logging.warning('Spider closed - SQLitePipeline')
+        #logging.warning('Spider closed - SQLitePipeline')
         return item
-    logging.info('Loaded')
+    #logging.info('Loaded')

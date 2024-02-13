@@ -8,7 +8,7 @@ def read_config(file_path):
         config.read(file_path)
         return config['airflow_dump']
 
-config_file_path = '../../.env/config.cfg'
+config_file_path = '../../.en_v.cfg'
 config = read_config(config_file_path)
 
 default_args = {
